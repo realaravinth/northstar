@@ -16,7 +16,7 @@ Lookup related routes
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 from flask import Blueprint, jsonify, request
-from .utils import clean_url, not_url, verify_interface_online
+from .utils import clean_url, not_url
 
 from northstar.db import get_db
 from .errors import Error

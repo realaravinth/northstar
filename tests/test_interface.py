@@ -18,8 +18,8 @@ from urllib.parse import urlparse, urlunparse
 from northstar import create_app
 from northstar.api.v1.interface import F_D_EMPTY_FORGE_LIST
 from northstar.api.v1.interface import F_D_INTERFACE_UNREACHABLE
-from northstar.api.v1.interface import clean_url, not_url
-from northstar.api.v1.interface import verify_interface_online
+from northstar.api.v1.utils import clean_url, not_url
+from northstar.api.v1.utils import verify_interface_online
 from northstar.db import get_db
 
 
