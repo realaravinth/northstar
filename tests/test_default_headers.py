@@ -1,8 +1,6 @@
-"""
-Version 1 API
-"""
+"""Test default headers configuration"""
 # North Star ---  A lookup service for forged fed ecosystem
-# Copyright © 2021 Aravinth Manivannan <realaravinth@batsense.net>
+# Copyright © 2021 Aravinth Manivannan <realaravinth@batsense.net
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -15,10 +13,11 @@ Version 1 API
 # GNU Affero General Public License for more details.
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from flask import Blueprint
-from .interface import bp as interface_bp
-from .lookup import bp as lookup_bp
+from northstar import create_app
 
-bp = Blueprint("API_V1", __name__, url_prefix="/api/v1")
-bp.register_blueprint(interface_bp)
-bp.register_blueprint(lookup_bp)
+
+def test_flock_google(client):
+    """Test interface errors"""
+    response = client.get("/")
+    print(response.headers)
+    assert response.headers["Permissions-Policy"] == "interest-cohort=()"
